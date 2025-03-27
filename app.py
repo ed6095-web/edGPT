@@ -10,7 +10,8 @@ app = Flask(__name__)
 
 # Secure API Key Storage
 API_KEY = os.getenv('sk-c1483f69ae2c4527b056f83dc0d3e9bf')
-API_URL = API_URL = 'https://api.deepseek.com/v1/completions'
+API_URL = API_URL = API_URL = 'https://api.deepseek.com/v1/chat/completions'
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -26,7 +27,7 @@ def chat():
             API_URL,
             headers={
                 'Content-Type': 'application/json',
-                'Authorization': f'Bearer {API_KEY}'
+                'Authorization': f'Bearer {sk-c1483f69ae2c4527b056f83dc0d3e9bf}'
             },
             json={
                 "model": "deepseek-chat",  # Ensure this is the correct model name
